@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { YOUTUBE_VIDEOS_API } from '../utils/config';
+import React from 'react'
 import VideoCard from './VideoCard';
+import { Link } from 'react-router-dom';
+import useVideosApi from '../utils/useVideosApi';
 
 const VideoContainer = () => {
 
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    getVideosinfo();
-  }, []);
-
-  const getVideosinfo = async () => {
-    try {
-      const data = await fetch(YOUTUBE_VIDEOS_API);
-      const json = await data?.json();
-      // console.log(json?.items);
-      setVideos(json?.items || []);
-    } catch (error) {
-      console.error("Error fetching videos:", error);
-      setVideos([]);
-    }
-  }
+  const videos = useVideosApi();
 
   return (
     <div className='m-6 grid grid-cols-12 gap-4 gap-y-8'>
       {videos.map((video) => (
-        <VideoCard info={video} key={video.id} />
+        <Link to={"/watch?v=" + video.id}
+          className='col-span-12 sm:col-span-6 md:col-span-4'
+          key={video.id}
+        >
+          <VideoCard info={video} />
+        </Link>
       ))}
     </div>
   )
 }
 
-export default VideoContainer
+export default VideoContainer;

@@ -1,5 +1,6 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
 
@@ -8,27 +9,27 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="col-span-1 mt-[-12px]">
+    <div className="col-span-1 mt-[-12px] max-w-52">
       <div className="border-b-1 border-gray-400 p-3">
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Home</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shorts</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Popular</div>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Home</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shorts</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Popular</div></Link>
       </div>
       <div className="border-b-1 border-gray-400 p-3">
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Your channel</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">History</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Watch later</div>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Your channel</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">History</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Watch later</div></Link>
       </div>
       <div className="border-b-1 border-gray-400 p-3">
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div>
-        <div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Trending</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shopping</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Music</div></Link>
       </div>
     </div>
   )

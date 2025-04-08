@@ -1,18 +1,19 @@
 import React from 'react';
 import { formatDuration, formatViews, getTimeAgo } from '../utils/helpers';
 
-const VideoCard = ({ info }) => {
+const SuggestionBar = ({ info }) => {
 
     // console.log(info);
     const { statistics, snippet, contentDetails } = info;
     const { channelTitle, title, thumbnails, publishedAt } = snippet;
 
     return (
-        <div className="w-full flex flex-col">
-            <div className="relative">
+        <div className="grid grid-cols-2 gap-2 my-3">
+            <div className="col-span-1 relative">
                 <div className='overflow-hidden rounded-lg'>
-                    <img src={thumbnails.maxres?.url}
-                        className="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-105"
+                    <img
+                        src={thumbnails.medium?.url}
+                        className="transition-transform duration-300 ease-in-out hover:scale-105"
                         alt={title}
                     />
                 </div>
@@ -20,15 +21,10 @@ const VideoCard = ({ info }) => {
                     {formatDuration(contentDetails?.duration)}
                 </p>
             </div>
-            <div className="flex flex-row mt-2 gap-2">
-                <img
-                    // src={channelThumbnail}
-                    src="https://picsum.photos/seed/1/40/40"
-                    className="rounded-full max-h-10 max-w-10"
-                />
+            <div className='col-span-1'>
                 <div clas="flex flex-col">
-                    <p className="text-black text-md font-semibold line-clamp-2">{title}</p>
-                    <p className="text-gray-700 text-sm font-semibold mt-2 hover:text-gray-100"> {channelTitle} </p>
+                    <p className="text-black text-sm font-semibold line-clamp-2">{title}</p>
+                    <p className="text-gray-700 text-xs font-semibold mt-2"> {channelTitle} </p>
                     <p className="text-gray-600 text-xs font-semibold mt-1">
                         {formatViews(statistics?.viewCount)} views . {getTimeAgo(publishedAt)}
                     </p>
@@ -38,4 +34,4 @@ const VideoCard = ({ info }) => {
     )
 }
 
-export default VideoCard
+export default SuggestionBar;
