@@ -11,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="col-span-1 mt-[-12px] max-w-52">
       <div className="border-b-1 border-gray-400 p-3">
-        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Home</div></Link>
+        <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md bg-gray-600 text-white">Home</div></Link>
         <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shorts</div></Link>
         <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Popular</div></Link>
       </div>

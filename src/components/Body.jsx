@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import Header from './Header';
 import Sidebar from './Sidebar';
-// import MainContainer from './MainContainer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
+import { useDispatch } from 'react-redux';
+import { closeMenu, openMenu } from '../utils/appSlice';
 
 const Body = () => {
+
+  const dispatch = useDispatch();
+  const location = useLocation();
+
+  useEffect(() => {
+    location.pathname === '/' ? dispatch(openMenu()) : dispatch(closeMenu())
+  }, [location.pathname, dispatch])
+
   return (
-    <div className='grid grid-flow-col my-6'>
-      <Sidebar />
-      {/* <MainContainer /> */}
-      <Outlet />
-    </div>
+    <>
+      <Header />
+      <div className='grid grid-flow-col my-6'>
+        <Sidebar />
+        <Outlet />
+      </div>
+    </>
   )
 }
 

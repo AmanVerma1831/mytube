@@ -1,16 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useVideoDetails from '../utils/useVideoDetails';
 import { formatViews, getTimeAgo } from '../utils/helpers';
+import useVidComments from '../utils/useVidComments';
+import Comments from './Comments';
 
 const Details = ({ id }) => {
 
     // console.log("Details page : " + id);
-    const videoDetails = useVideoDetails(id);
+    const [show, setShow] = useState(false);
+    const videoComments = useVidComments(id);
+    const { videoDetails, loading } = useVideoDetails(id);
+
+    if (loading) return <div className="p-4">Loading details...</div>;
+    if (!videoDetails) return null;
+
     const { statistics, snippet } = videoDetails;
     const { channelTitle, title, publishedAt, description } = snippet;
-    const { viewCount, likeCount } = statistics;
+    const { viewCount, likeCount, commentCount } = statistics;
 
-    if (!videoDetails) return null;
 
     return (
         <div className='my-2'>
@@ -34,14 +41,14 @@ const Details = ({ id }) => {
                         </button>
                     </div>
                     <div className="flex space-x-2">
-                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-200 rounded-full">
+                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span className=''>👍</span>
                             <span>{formatViews(likeCount)}</span>
                         </button>
-                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-200 rounded-full">
+                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span>👎</span>
                         </button>
-                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-200 rounded-full">
+                        <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span>Share</span>
                         </button>
                     </div>
@@ -56,10 +63,20 @@ const Details = ({ id }) => {
                         {getTimeAgo(publishedAt)}
                     </span>
                 </div>
-                <p className="my-4 text-sm whitespace-pre-line line-clamp-4">{description}</p>
+                <p className={`my-4 text-sm whitespace-pre-line ${show ? " " : "line-clamp-4"}`}>{description}</p>
+                <button className='bg-gray-400 py-1 px-2 border rounded-xl mb-4 cursor-pointer hover:bg-gray-500'
+                    onClick={() => setShow(!show)}
+                >
+                    {show ? "Show Less" : "Show More"}
+                </button>
             </section>
             <section>
-                comments
+                <p className='font-bold text-xl'>{commentCount} Comments</p>
+                <div>
+                    {videoComments.map((comment) => {
+                        return <Comments key={comment.id} data={comment.snippet} />
+                    })}
+                </div>
             </section>
         </div>
     )
