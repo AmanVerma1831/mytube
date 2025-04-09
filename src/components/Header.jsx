@@ -1,11 +1,8 @@
 import React from 'react'
-import Hamburger from '../assets/Hamburger_icon.webp'
-import Youtube from '../assets/YouTube_Logo.png'
-import UserIcon from '../assets/user-icon.png'
-import SearchIcon from '../assets/search-icon.svg'
 import { useDispatch } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice'
 import { Link } from 'react-router-dom';
+import { Hamburger, Youtube, SearchIcon, UserIcon } from "../utils/config"
 
 const Header = () => {
 

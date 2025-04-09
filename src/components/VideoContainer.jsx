@@ -2,12 +2,13 @@ import React from 'react'
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
 import useVideosApi from '../utils/useVideosApi';
+import Shimmer from './Shimmer';
 
 const VideoContainer = () => {
 
   const videos = useVideosApi();
 
-  return (
+  return (videos?.length === 0) ? (<Shimmer />) : (
     <div className='m-6 grid grid-cols-12 gap-4 gap-y-8'>
       {videos.map((video) => (
         <Link to={"/watch?v=" + video.id}

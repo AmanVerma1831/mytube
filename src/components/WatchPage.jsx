@@ -4,6 +4,7 @@ import useVideosApi from '../utils/useVideosApi';
 import { Link } from 'react-router-dom';
 import SuggestionBar from './SuggestionBar';
 import Details from './Details';
+import Shimmer from './Shimmer';
 
 const WatchPage = () => {
 
@@ -11,7 +12,7 @@ const WatchPage = () => {
     // console.log("Watch Page : " + searchParams.get("v"));
     const videos = useVideosApi();
 
-    return (
+    return (videos?.length === 0) ? (<Shimmer />) : (
         <div className='ml-8'>
             <div className='flex'>
                 <div className='flex w-[70%]'>
