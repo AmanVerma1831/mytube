@@ -1,9 +1,10 @@
-export const UserIcon = "https://github.com/AmanVerma1831/mytube/blob/main/src/assets/user-icon.png?raw=true";
-export const SearchIcon = "https://raw.githubusercontent.com/AmanVerma1831/mytube/5fbd58b2b572b00d3951c3d65e208893f8147198/src/assets/search-icon.svg";
-export const Youtube = "https://github.com/AmanVerma1831/mytube/blob/main/src/assets/YouTube_Logo.png?raw=true";
-export const Hamburger = "https://raw.githubusercontent.com/AmanVerma1831/mytube/refs/heads/main/src/assets/Hamburger_icon.webp";
+export const UserIcon = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/user-icon.png";
+export const SearchIcon = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/search-icon.svg";
+export const Youtube = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/YouTube_Logo.png";
+export const Hamburger = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/Hamburger_icon.webp";
 
-const GOOGLE_API_KEY = "AIzaSyD7WMIin5c8tH9ssVi9Q8Eqi6hxKXA-cLg";
+// const GOOGLE_API_KEY = "AIzaSyD7WMIin5c8tH9ssVi9Q8Eqi6hxKXA-cLg";
+export const GOOGLE_API_KEY = "AIzaSyDYDj8HiIJtcwepyJBESow6i0F_-qoWex0";
 
 export const YOUTUBE_VIDEOS_API =
     "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key="
@@ -19,3 +20,5 @@ export const YOUTUBE_VIDEOS_COMMENTS =
 export const YOUTUBE_CHANNEL_DP_API = "https://youtube.googleapis.com/youtube/v3/channels?part=snippet&key=" +
     GOOGLE_API_KEY +
     "&id=";
+
+export const YouTube_SEARCH_API = "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

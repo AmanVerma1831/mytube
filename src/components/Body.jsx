@@ -3,7 +3,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import { Outlet, useLocation } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { closeMenu, openMenu } from '../utils/appSlice';
+import { closeMenu, openMenu } from '../redux/appSlice';
 
 const Body = () => {
 

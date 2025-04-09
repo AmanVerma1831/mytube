@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import useVideoDetails from '../utils/useVideoDetails';
+import useVideoDetails from '../hooks/useVideoDetails';
 import { formatViews, getTimeAgo } from '../utils/helpers';
-import useVidComments from '../utils/useVidComments';
+import useVidComments from '../hooks/useVidComments';
 import Comments from './Comments';
-import useChannelThumb from '../utils/useChannelThumb';
+import useChannelThumb from '../hooks/useChannelThumb';
 
 const Details = ({ id }) => {
 
@@ -23,7 +23,7 @@ const Details = ({ id }) => {
     const channelThumbnail = thumbnail?.medium?.url;
 
     return (
-        <div className='my-2'>
+        <div className='my-4'>
             <section className='mb-4'>
                 <h1 className='font-bold text-2xl my-2'>{title}</h1>
                 <div className='flex justify-between items-center'>
@@ -38,7 +38,9 @@ const Details = ({ id }) => {
                                 <p className="text-xs text-gray-500">1.2M subscribers</p>
                             </div>
                         </div>
-                        <button className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-red-700">
+                        <button
+                            className="bg-red-600 text-white px-4 py-1 rounded-full text-sm font-medium hover:bg-white hover:border-2 hover:border-red-600 hover:text-red-600 cursor-pointer"
+                        >
                             Subscribe
                         </button>
                     </div>
@@ -66,7 +68,7 @@ const Details = ({ id }) => {
                     </span>
                 </div>
                 <p className={`my-4 text-sm whitespace-pre-line ${show ? " " : "line-clamp-4"}`}>{description}</p>
-                <button className='bg-gray-400 py-1 px-2 border rounded-xl mb-4 cursor-pointer hover:bg-gray-500'
+                <button className='bg-gray-400 py-1 px-4 border rounded-full mb-4 cursor-pointer hover:bg-gray-800 hover:text-white'
                     onClick={() => setShow(!show)}
                 >
                     {show ? "Show Less" : "Show More"}

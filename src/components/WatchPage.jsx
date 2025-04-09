@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom';
-import useVideosApi from '../utils/useVideosApi';
+import useVideosApi from '../hooks/useVideosApi';
 import { Link } from 'react-router-dom';
 import SuggestionBar from './SuggestionBar';
 import Details from './Details';

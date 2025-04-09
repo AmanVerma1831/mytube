@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { YOUTUBE_VIDEOS_COMMENTS } from './config';
+import { YOUTUBE_VIDEOS_COMMENTS } from '../utils/config';
 
 const useVidComments = (id) => {
 

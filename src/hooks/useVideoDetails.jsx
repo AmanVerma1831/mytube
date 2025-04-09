@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { YOUTUBE_VIDEO_DETAILS_API } from './config';
+import { YOUTUBE_VIDEO_DETAILS_API } from '../utils/config';
 
 const useVideoDetails = (videoId) => {
 

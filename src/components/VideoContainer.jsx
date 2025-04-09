@@ -1,7 +1,7 @@
 import React from 'react'
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
-import useVideosApi from '../utils/useVideosApi';
+import useVideosApi from '../hooks/useVideosApi';
 import Shimmer from './Shimmer';
 
 const VideoContainer = () => {

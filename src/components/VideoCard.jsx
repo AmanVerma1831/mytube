@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatDuration, formatViews, getTimeAgo } from '../utils/helpers';
-import useChannelThumb from '../utils/useChannelThumb';
+import useChannelThumb from '../hooks/useChannelThumb';
 
 const VideoCard = ({ info }) => {
 

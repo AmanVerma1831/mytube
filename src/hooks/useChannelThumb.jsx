@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { YOUTUBE_CHANNEL_DP_API } from './config';
+import { YOUTUBE_CHANNEL_DP_API } from '../utils/config';
 
 const useChannelThumb = (id) => {
     const [thumbnail, seThumbnail] = useState(null);
