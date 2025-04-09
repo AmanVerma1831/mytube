@@ -3,21 +3,24 @@ import useVideoDetails from '../utils/useVideoDetails';
 import { formatViews, getTimeAgo } from '../utils/helpers';
 import useVidComments from '../utils/useVidComments';
 import Comments from './Comments';
+import useChannelThumb from '../utils/useChannelThumb';
 
 const Details = ({ id }) => {
 
     // console.log("Details page : " + id);
     const [show, setShow] = useState(false);
-    const videoComments = useVidComments(id);
     const { videoDetails, loading } = useVideoDetails(id);
+    const videoComments = useVidComments(id);
+    const { thumbnail, loading: thumbLoading } = useChannelThumb(videoDetails?.snippet?.channelId);
 
-    if (loading) return <div className="p-4">Loading details...</div>;
+    if (loading || thumbLoading) return <div className="p-4">Loading details...</div>;
     if (!videoDetails) return null;
 
     const { statistics, snippet } = videoDetails;
     const { channelTitle, title, publishedAt, description } = snippet;
     const { viewCount, likeCount, commentCount } = statistics;
 
+    const channelThumbnail = thumbnail?.medium?.url;
 
     return (
         <div className='my-2'>
@@ -27,9 +30,8 @@ const Details = ({ id }) => {
                     <div className='flex'>
                         <div className='flex mr-6'>
                             <img
-                                // src={channelThumbnail}
-                                src="https://picsum.photos/seed/1/40/40"
-                                className="w-10 h-10 rounded-full mr-3"
+                                src={channelThumbnail}
+                                className="w-10 h-10 rounded-full mr-3 border-2 border-blue-600"
                             />
                             <div>
                                 <p className="font-medium">{channelTitle}</p>

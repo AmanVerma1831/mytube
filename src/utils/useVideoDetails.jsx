@@ -12,7 +12,7 @@ const useVideoDetails = (videoId) => {
             try {
                 const data = await fetch(YOUTUBE_VIDEO_DETAILS_API + videoId);
                 const json = await data?.json();
-                console.log(json);
+                // console.log(json);
                 setVideoDetails(json?.items[0])
             } catch (error) {
                 console.error("Error fetching videos:", error);

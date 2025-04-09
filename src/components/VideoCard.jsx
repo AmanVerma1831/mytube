@@ -1,11 +1,17 @@
 import React from 'react';
 import { formatDuration, formatViews, getTimeAgo } from '../utils/helpers';
+import useChannelThumb from '../utils/useChannelThumb';
 
 const VideoCard = ({ info }) => {
 
     // console.log(info);
     const { statistics, snippet, contentDetails } = info;
-    const { channelTitle, title, thumbnails, publishedAt } = snippet;
+    const { channelTitle, title, thumbnails, publishedAt, channelId } = snippet;
+
+    const { thumbnail, loading } = useChannelThumb(channelId);
+    if (loading) return <div className="p-4">Loading details...</div>;
+    const channelThumbnail = thumbnail?.medium?.url;
+
 
     return (
         <div className="w-full flex flex-col">
@@ -22,9 +28,8 @@ const VideoCard = ({ info }) => {
             </div>
             <div className="flex flex-row mt-2 gap-2">
                 <img
-                    // src={channelThumbnail}
-                    src="https://picsum.photos/seed/1/40/40"
-                    className="rounded-full max-h-10 max-w-10"
+                    src={channelThumbnail}
+                    className="rounded-full h-10 w-10 border-2 border-blue-600"
                 />
                 <div clas="flex flex-col">
                     <p className="text-black text-md font-semibold line-clamp-2">{title}</p>
