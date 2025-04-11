@@ -9,7 +9,7 @@ const ButtonList = () => {
   ];
 
   return (
-    <div className=''>
+    <div className='hidden md:block'>
       <button
         className='px-5 py-1 m-1 rounded-lg bg-black text-white cursor-pointer'>
         All

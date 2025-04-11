@@ -9,7 +9,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className="col-span-1 mt-[-12px] max-w-52">
+    <div className=" hidden md:inline md:col-span-1 md:mt-[-12px] md:max-w-52">
       <div className="border-b-1 border-gray-400 p-3">
         <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md bg-gray-600 text-white">Home</div></Link>
         <Link to="/"><div className=" py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">Shorts</div></Link>

@@ -13,12 +13,12 @@ const WatchPage = () => {
     const videos = useVideosApi();
 
     return (videos?.length === 0) ? (<Shimmer />) : (
-        <div className='ml-8'>
-            <div className='flex'>
-                <div className='flex w-[70%]'>
-                    <div className='md:w-[100%] p-2 mx-2'>
+        <div className='md:ml-8'>
+            <div className='md:flex'>
+                <div className='md:flex md:w-[70%]'>
+                    <div className='md:w-full md:p-2 md:mx-2'>
                         <iframe
-                            className='h-56 sm:h-[450px] rounded-md shadow-lg w-[100%]'
+                            className='h-56 sm:h-[450px] rounded-md shadow-lg w-full'
                             height="540" src={"https://www.youtube.com/embed/" + searchParams.get("v")}
                             title="YouTube video player" frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

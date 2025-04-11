@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { YouTube_SEARCH_API } from '../utils/config';
+import { useDispatch, useSelector } from 'react-redux';
+import { cacheResults } from '../redux/searchSlice';
 
 const useSearch = (query) => {
 
+    const searchCache = useSelector(store => store.search);
+    const dispatch = useDispatch();
     const [suggestions, setShowSuggestions] = useState([]);
 
     useEffect(() => {
@@ -11,6 +15,9 @@ const useSearch = (query) => {
                 const data = await fetch(YouTube_SEARCH_API + query);
                 const json = await data.json();
                 setShowSuggestions(json[1]);
+                dispatch(cacheResults({
+                    [query]: json[1]
+                }));
             } catch (error) {
                 console.error("Error fetching videos:", error);
                 setShowSuggestions([]);
@@ -18,15 +25,19 @@ const useSearch = (query) => {
         }
 
         const timer = setTimeout(() => {
-            getSearchSuggestions()
+            if (searchCache[query]) {
+                setShowSuggestions(searchCache[query]);
+            } else {
+                getSearchSuggestions()
+            }
         }, 500);
 
         return () => {
             clearTimeout(timer);
         }
-    }, [query]);
+    }, [query, searchCache]);
 
     return suggestions;
 }
 
-export default useSearch
+export default useSearch;

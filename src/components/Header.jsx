@@ -20,14 +20,14 @@ const Header = () => {
     }
 
     return (
-        <div className='grid grid-cols-12 p-4 border-b-1 border-gray-200'>
+        <div className='md:grid md:grid-cols-12 p-4 md:border-b-1 border-gray-200'>
             <section className='flex items-center col-span-1'>
-                <img alt='ham-icon' src={Hamburger} className='h-7 cursor-pointer' onClick={() => toggleMenuHandler()} />
+                <img alt='ham-icon' src={Hamburger} className='hidden md:block h-7 cursor-pointer' onClick={() => toggleMenuHandler()} />
                 <Link to="/">
                     <img alt='ham-icon' src={Youtube} className='h-6 mx-2' />
                 </Link>
             </section>
-            <section className='col-span-10'>
+            <section className='hidden md:block md:col-span-10'>
                 <div className='w-full flex flex-col justify-center items-center'>
                     <div className='w-full flex justify-center items-center'>
                         <input type='text'
@@ -58,7 +58,7 @@ const Header = () => {
                     </div>}
                 </div>
             </section>
-            <section className=' col-span-1'>
+            <section className='hidden md:block md:col-span-1'>
                 <div
                     className='flex justify-center border border-sky-500 rounded-full px-2 py-1 cursor-pointer'>
                     <img alt='user-icon' src={UserIcon} className='h-7 mr-1' />

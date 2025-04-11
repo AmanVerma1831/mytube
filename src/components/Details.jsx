@@ -25,8 +25,8 @@ const Details = ({ id }) => {
     return (
         <div className='my-4'>
             <section className='mb-4'>
-                <h1 className='font-bold text-2xl my-2'>{title}</h1>
-                <div className='flex justify-between items-center'>
+                <h1 className='font-bold md:text-2xl my-2 line-clamp-2'>{title}</h1>
+                <div className='md:flex justify-between items-center'>
                     <div className='flex'>
                         <div className='flex mr-6'>
                             <img
@@ -44,7 +44,7 @@ const Details = ({ id }) => {
                             Subscribe
                         </button>
                     </div>
-                    <div className="flex space-x-2">
+                    <div className="flex space-x-2 py-4 md:p-0">
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span className=''>👍</span>
                             <span>{formatViews(likeCount)}</span>
