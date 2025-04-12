@@ -33,7 +33,7 @@ const VideoCard = ({ info }) => {
                 />
                 <div clas="flex flex-col">
                     <p className="text-black text-md font-semibold line-clamp-2">{title}</p>
-                    <p className="text-gray-700 text-sm font-semibold mt-2 hover:text-gray-100"> {channelTitle} </p>
+                    <p className="text-gray-700 text-sm font-semibold mt-2"> {channelTitle} </p>
                     <p className="text-gray-600 text-xs font-semibold mt-1">
                         {formatViews(statistics?.viewCount)} views . {getTimeAgo(publishedAt)}
                     </p>
