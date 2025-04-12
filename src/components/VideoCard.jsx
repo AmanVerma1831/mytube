@@ -16,9 +16,9 @@ const VideoCard = ({ info }) => {
     return (
         <div className="w-full flex flex-col">
             <div className="relative">
-                <div className='overflow-hidden rounded-lg'>
+                <div className='w-100 h-56 overflow-hidden rounded-lg'>
                     <img src={thumbnails.high?.url}
-                        className="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-105"
+                        className="object-none transition-transform duration-300 ease-in-out hover:scale-105"
                         alt={title}
                     />
                 </div>

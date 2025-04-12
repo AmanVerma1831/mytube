@@ -1,5 +1,3 @@
-export const UserIcon = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/user-icon.png";
-export const SearchIcon = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/search-icon.svg";
 export const Youtube = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/YouTube_Logo.png";
 export const Hamburger = "https://raw.githubusercontent.com/AmanVerma1831/mytube/8c42c60a2d4006700130ab0501a6fc83dc7813da/src/assets/Hamburger_icon.webp";
 

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleMenu } from '../redux/appSlice'
 import { Link } from 'react-router-dom';
-import { Hamburger, Youtube, SearchIcon, UserIcon } from "../utils/config"
+import { Hamburger, Youtube } from "../utils/config";
+import { HiOutlineUserCircle } from "react-icons/hi2";
+import { IoSearch } from "react-icons/io5";
 import useSearch from '../hooks/useSearch';
 
 const Header = () => {
@@ -38,9 +40,9 @@ const Header = () => {
                             onBlur={() => setSearchList(false)}
                         />
                         <button
-                            className='bg-gray-200 border-1 border-gray-400 rounded-r-full px-3 py-1 hover:bg-gray-300'
+                            className='bg-gray-200 border-1 border-gray-400 rounded-r-full px-4 py-1 hover:bg-gray-300'
                         >
-                            <img alt='search-icon' src={SearchIcon} className='h-6 p-1' />
+                            <IoSearch className='h-6' />
                         </button>
                     </div>
                     {searchList && <div className='relative w-full z-1'>
@@ -49,7 +51,7 @@ const Header = () => {
                                 {suggestions.map((s, i) => (
                                     <li key={i}
                                         className='flex items-center hover:bg-gray-200 p-2 rounded-lg cursor-pointer'>
-                                        <img alt='search-icon' src={SearchIcon} className='h-6 p-1 mr-2' />
+                                        <IoSearch className='h-6 w-auto p-1 mr-2' />
                                         <p className='text-gray-700'>{s}</p>
                                     </li>
                                 ))}
@@ -60,9 +62,9 @@ const Header = () => {
             </section>
             <section className='hidden md:block md:col-span-1'>
                 <div
-                    className='flex justify-center border border-sky-500 rounded-full px-2 py-1 cursor-pointer'>
-                    <img alt='user-icon' src={UserIcon} className='h-7 mr-1' />
-                    <p className='font-semibold text-sky-500'>sign in</p>
+                    className='flex justify-center items-center border text-sky-500 border-sky-500 rounded-full px-2 py-1 cursor-pointer'>
+                    <HiOutlineUserCircle className='w-auto h-6 mr-1' />
+                    <p className='font-semibold'>sign in</p>
                 </div>
             </section>
         </div>

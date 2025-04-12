@@ -4,6 +4,7 @@ import { formatViews, getTimeAgo } from '../utils/helpers';
 import useVidComments from '../hooks/useVidComments';
 import Comments from './Comments';
 import useChannelThumb from '../hooks/useChannelThumb';
+import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
 
 const Details = ({ id }) => {
 
@@ -46,11 +47,11 @@ const Details = ({ id }) => {
                     </div>
                     <div className="flex space-x-2 py-4 md:p-0">
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
-                            <span className=''>👍</span>
+                            <span className=''><BiSolidLike /></span>
                             <span>{formatViews(likeCount)}</span>
                         </button>
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
-                            <span>👎</span>
+                            <span><BiSolidDislike /></span>
                         </button>
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span>Share</span>

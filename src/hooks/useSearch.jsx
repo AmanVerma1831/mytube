@@ -35,7 +35,7 @@ const useSearch = (query) => {
         return () => {
             clearTimeout(timer);
         }
-    }, [query, searchCache]);
+    }, [query, searchCache, dispatch]);
 
     return suggestions;
 }

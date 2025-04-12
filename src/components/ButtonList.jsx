@@ -5,7 +5,7 @@ const ButtonList = () => {
 
   const namesOfButtons = [
     "Music", "Mixes", "Game Shows", "Live", "Train", "India", "Cooking",
-    "Swiggy", "Circus", "Water", "English", "Bangalore", "Sky"
+    "Swiggy", "Circus", "Water", "English", "Bangalore"
   ];
 
   return (
