@@ -16,7 +16,7 @@ const VideoCard = ({ info }) => {
     return (
         <div className="w-full flex flex-col">
             <div className="relative">
-                <div className='w-100 h-56 overflow-hidden rounded-lg'>
+                <div className='md:w-100 md:h-56 overflow-hidden md:rounded-lg'>
                     <img src={thumbnails.high?.url}
                         className="object-none transition-transform duration-300 ease-in-out hover:scale-105"
                         alt={title}
@@ -26,7 +26,7 @@ const VideoCard = ({ info }) => {
                     {formatDuration(contentDetails?.duration)}
                 </p>
             </div>
-            <div className="flex flex-row mt-2 gap-2">
+            <div className="flex flex-row mt-2 gap-2 mx-2 md:mx-0">
                 <img
                     src={channelThumbnail}
                     className="rounded-full h-10 w-10 border-2 border-blue-600"

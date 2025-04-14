@@ -25,10 +25,10 @@ const Details = ({ id }) => {
 
     return (
         <div className='my-4'>
-            <section className='mb-4'>
+            <section className='mb-4 mx-2 md:mx-0'>
                 <h1 className='font-bold md:text-2xl my-2 line-clamp-2'>{title}</h1>
                 <div className='md:flex justify-between items-center'>
-                    <div className='flex'>
+                    <div className='flex justify-between'>
                         <div className='flex mr-6'>
                             <img
                                 src={channelThumbnail}
@@ -45,13 +45,13 @@ const Details = ({ id }) => {
                             Subscribe
                         </button>
                     </div>
-                    <div className="flex space-x-2 py-4 md:p-0">
+                    <div className="flex justify-between space-x-2 py-4 md:p-0">
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span className=''><BiSolidLike /></span>
                             <span>{formatViews(likeCount)}</span>
                         </button>
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
-                            <span><BiSolidDislike /></span>
+                            <span><BiSolidDislike className='mx-5' /></span>
                         </button>
                         <button className="flex items-center space-x-1 px-5 py-1 bg-gray-300 hover:bg-gray-400 rounded-full">
                             <span>Share</span>
