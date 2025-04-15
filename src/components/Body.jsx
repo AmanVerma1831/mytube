@@ -17,7 +17,7 @@ const Body = () => {
   return (
     <>
       <Header />
-      <div className='md:grid md:grid-flow-col'>
+      <div className='md:grid grid-flow-col'>
         <Sidebar />
         <Outlet />
       </div>

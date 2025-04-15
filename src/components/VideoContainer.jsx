@@ -11,9 +11,9 @@ const VideoContainer = () => {
   return (videos?.length === 0) ? (<Shimmer />) : (
     <div className='md:m-6 grid grid-cols-3 gap-4 gap-y-8'>
       {videos.map((video) => (
-        <Link to={"/watch?v=" + video.id}
+        <Link to={"/watch?v=" + (video.id?.videoId || video.id)}
           className='col-span-3 md:col-span-1'
-          key={video.id}
+          key={(video.id?.videoId || video.id)}
         >
           <VideoCard info={video} />
         </Link>

@@ -1,6 +1,10 @@
 // Format duration from ISO 8601 (PT1H2M3S) to 1:02:03
 export const formatDuration = (duration) => {
+    if (!duration) return '0:00'; // Handle undefined/null cases
+
     const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+    if (!match) return '0:00'; // Handle invalid format
+
     const hours = parseInt(match[1] || 0);
     const minutes = parseInt(match[2] || 0);
     const seconds = parseInt(match[3] || 0);

@@ -5,6 +5,7 @@ import store from './redux/store';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MainContainer from './components/MainContainer';
 import WatchPage from './components/WatchPage';
+import SearchVideoContainer from './components/SearchVideoContainer';
 
 const appRouter = createBrowserRouter([{
   path: "/",
@@ -17,6 +18,10 @@ const appRouter = createBrowserRouter([{
     {
       path: "watch",
       element: <WatchPage />
+    },
+    {
+      path: "results",
+      element: <SearchVideoContainer />
     }
   ]
 }])

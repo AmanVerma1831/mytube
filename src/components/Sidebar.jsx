@@ -14,7 +14,7 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
 
   return (
-    <div className=" hidden md:inline md:col-span-1 md:mt-[-12px] ">
+    <div className=" hidden md:inline md:col-span-1 md:mt-[-12px] max-w-50">
       <div className="border-b-1 border-gray-400 p-3">
         <Link to="/"><div className="flex items-center py-1 px-6 mb-1 font-semibold rounded-md bg-gray-600 text-white">
           <FaHome className="mr-4" /> Home</div>

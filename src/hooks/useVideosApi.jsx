@@ -6,20 +6,20 @@ const useVideosApi = () => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
+        const getVideosinfo = async () => {
+            try {
+                const data = await fetch(YOUTUBE_VIDEOS_API);
+                const json = await data?.json();
+                setVideos(json?.items || []);
+                // console.log(json?.items);
+            } catch (error) {
+                console.error("Error fetching videos:", error);
+                setVideos([]);
+            }
+        }
+
         getVideosinfo();
     }, []);
-
-    const getVideosinfo = async () => {
-        try {
-            const data = await fetch(YOUTUBE_VIDEOS_API);
-            const json = await data?.json();
-            // console.log(json?.items);
-            setVideos(json?.items || []);
-        } catch (error) {
-            console.error("Error fetching videos:", error);
-            setVideos([]);
-        }
-    }
 
     return videos;
 }

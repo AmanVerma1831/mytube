@@ -11,14 +11,16 @@ const VideoCard = ({ info }) => {
     const { thumbnail, loading } = useChannelThumb(channelId);
     if (loading) return <div className="p-4">Loading details...</div>;
     const channelThumbnail = thumbnail?.medium?.url;
+    // console.log(thumbnails);
+
 
 
     return (
         <div className="w-full flex flex-col">
             <div className="relative">
-                <div className='md:w-100 md:h-56 overflow-hidden md:rounded-lg'>
-                    <img src={thumbnails.high?.url}
-                        className="object-none transition-transform duration-300 ease-in-out hover:scale-105"
+                <div className='md:w-100 md:h-56 overflow-hidden md:rounded-lg flex flex-col justify-center'>
+                    <img src={thumbnails.standard?.url}
+                        className="transition-transform duration-300 ease-in-out hover:scale-105"
                         alt={title}
                     />
                 </div>
