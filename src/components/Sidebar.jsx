@@ -59,7 +59,7 @@ const Sidebar = () => {
         <Link to="/"><div className="flex items-center py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">
           <MdSportsEsports className='mr-4' />Gaming</div>
         </Link>
-        <Link to="/"><div className="flex items-center py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">
+        <Link to="/about"><div className="flex items-center py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">
           <FaNewspaper className='mr-4' />News</div>
         </Link>
         <Link to="/"><div className="flex items-center py-1 px-6 font-semibold rounded-md hover:bg-gray-600 hover:text-white">
